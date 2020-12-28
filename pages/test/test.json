@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav-bar": "../Components/topbar/topbar",
+    "footer-bar":"../Components/footerBar/footerBar",
+    "popup-center":"../Components/popupcenter/popupcenter"
+  },
+  "navigationStyle": "custom"
+}

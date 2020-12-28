@@ -1,0 +1,22 @@
+.dx-search-bar-from {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dx-search-bar-input {
+  width: 460rpx;
+  display: block;
+  padding-left: 10px;
+}
+
+.dx-search-bar-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid green;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.dx-search-bar-label {
+  font-size: 14px;
+}

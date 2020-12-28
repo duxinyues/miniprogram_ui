@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "calendar":"../ui_component/calendar/calendar"
+  },
+  "navigationBarTitleText": "日历组件"
+}

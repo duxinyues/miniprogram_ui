@@ -1,0 +1,2 @@
+var yd = "贵州远东";
+module.exports.msg = yd;

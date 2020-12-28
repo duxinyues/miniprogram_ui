@@ -1,0 +1,11 @@
+/* pages/ui/ui.wxss */
+
+.dxui-searchbar {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.dxui-slideview {
+  border: 1px solid  blue;
+}
+

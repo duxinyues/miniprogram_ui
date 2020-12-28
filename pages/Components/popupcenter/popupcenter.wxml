@@ -1,0 +1,3 @@
+<view class="{{show?'yd_overlay':'yd_close'}} " bindtap="close_overlay">
+  <view class="{{show?'yd_popup_center':'yd_close_popup'}}"></view>
+</view>

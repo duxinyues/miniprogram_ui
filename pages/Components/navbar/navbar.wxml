@@ -1,0 +1,8 @@
+<view class='nav-wrap' style="height:{{height*2+44}}px">
+  <!-- 导航栏背景图片 -->
+  <image class="backgroundimg" src="http://img4.imgtn.bdimg.com/it/u=25651867,761734299&fm=26&gp=0.jpg" mode="center" bindload="imgLoaded"/>
+  <!-- // 导航栏 中间的标题 -->
+  <view class='nav-title' style='line-height: {{height*2 + 44}}px; color:#fff;'>
+    {{navbarData.title}}
+  </view>
+</view>

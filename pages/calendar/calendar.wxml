@@ -1,0 +1,1 @@
+<calendar  ex-class="calendar-cm-month" bindonDayTap="onCalendarDayTap" displayTime="{{calendarDisplayTime}}" selectedDate="{{calendarSelectedDate}}" displayMonthNum="{{calendarDisplayMonthNum}}" ></calendar>

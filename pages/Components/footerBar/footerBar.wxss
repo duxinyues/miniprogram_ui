@@ -1,0 +1,11 @@
+/* pages/Components/footerBar/footerBar.wxss */
+.footerBar {
+  border: 1px solid red;
+  color: red;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0vh;
+  z-index: 99999;
+  background:blue
+}

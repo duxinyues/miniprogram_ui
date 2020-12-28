@@ -1,0 +1,22 @@
+.dxui-toptips-container {
+  width: 80%;
+  height: 50rpx;
+  border-radius: 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dxui-toptips-success {
+  background: #00d060;
+  color: #fff;
+}
+
+.dxui-toptips-warn {
+  background: #ff8c00;
+  color: #fff;
+}
+
+.dxui-toptips-error {
+  background: red;
+  color: #fff;
+}

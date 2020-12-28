@@ -1,0 +1,7 @@
+<nav-bar  navbar-data='{{nvabarData}}'></nav-bar>
+<footer-bar></footer-bar>
+<popup-center show="{{show}}"></popup-center>
+
+<view  class="container">测试页面</view>
+
+<view bindtap="openCenterPopup">弹窗</view>

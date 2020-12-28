@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "nav-bar": "../Components/navbar/navbar",
+    "popup-left":"../Components/popupLeft/popupLeft",
+    "popup-footer":"../Components/popupFooter/popupFooter",
+    "popup-center":"../Components/popupcenter/popupcenter",
+    "stepper":"../Components/stepper/stepper",
+    "footer-bar":"../Components/footerBar/footerBar"
+  }
+}

@@ -1,0 +1,44 @@
+.yd_overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+button {
+  margin: 10rpx;
+}
+
+.yd_show_overlay {
+  height: 100%;
+}
+
+.yd_close_overlay {
+  height: 0;
+}
+
+.footer_container {
+  text-align: center;
+  line-height: 110rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  z-index: 99;
+  transition-property: height;
+  transition-duration: 900ms;
+  transition-timing-function: ease;
+}
+
+.yd_popup_footer {
+  transition-property: height;
+  transition-duration: 900ms;
+  transition-timing-function: ease;
+}
+
+.yd_footer_conter {
+  height: 20%;
+}

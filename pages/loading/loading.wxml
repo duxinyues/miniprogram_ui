@@ -1,0 +1,9 @@
+<view style="margin-top:50px;margin-bottom:50px">
+  <loading></loading>
+</view>
+<view class="margin-bottom:50px">
+  <loading1></loading1>
+</view>
+
+<loading2></loading2>
+<loading3></loading3>

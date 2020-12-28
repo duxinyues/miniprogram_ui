@@ -1,0 +1,13 @@
+<view class="dx-search-bar">
+  <view class="dx-search-bar-from">
+    <!-- 搜索框的输入区 -->
+    <view class="dx-search-bar-box">
+      <icon class="dx-icon-search" type="search" size="12" />
+      <input type="text" class="dx-search-bar-input" placeholder="{{placeholder}}"  bindblur="blur"   />
+    </view>
+    <!-- 搜索框 的标签 -->
+    <label class="dx-search-bar-label">
+      <text class="dx-search-bar-text">搜索</text>
+    </label>
+  </view>
+</view>

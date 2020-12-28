@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "loading": "../ui_component/loading/loading",
+    "loading1": "../ui_component/loading1/loading1",
+    "loading2": "../ui_component/loading2/loading2",
+    "loading3": "../ui_component/loading3/loading3"
+  },
+  "navigationBarTitleText": "loading组件"
+}

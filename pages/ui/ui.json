@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "searchbar": "../ui_component/searchbar/searchbar",
+    "nav-bar": "../Components/navbar/navbar",
+    "toptips": "../ui_component/toptips/toptips"
+  },
+  "navigationBarTitleText": "自定义UI组件"
+}

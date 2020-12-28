@@ -1,0 +1,3 @@
+<view class="yd_overlay   {{show?'yd_show_overlay':'yd_close_overlay'}}   yd_popup_footer" bindtap="close_overlay">
+</view>
+<view class="footer_container  {{show?'yd_footer_conter':'yd_close_overlay'}}  ">底部弹出</view>

@@ -1,0 +1,17 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style="margin-top:{{height*2+44}}px"></view>
+<view style="margin-top:{{height*2+44}}px">搜索组件：</view>
+<view class="dxui-searchbar">
+  <searchbar placeholder="搜索" bindrealNameConfirm="realNameConfirm"></searchbar>
+</view>
+<view>搜索组件传的参数值：{{value}}</view>
+<view class="dxui-toptips">
+  <view wx:if="{{showtoptips}}">
+    <toptips msg="报错了！" state="error"></toptips>
+  </view>
+  <button type="primary" bindtap="showToptips" style="margin-top:20px;">提示组件</button>
+</view>
+
+<view style="margin-top:50px">
+  <button type="primary" bindtap="showLoading" style="margin-bottom:50px">loading组件</button>
+</view>

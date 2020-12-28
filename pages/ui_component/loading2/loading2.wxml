@@ -1,0 +1,62 @@
+<view id="ajaxloader2">
+  <view class="outer"></view>
+  <view class="inner"></view>
+</view>
+
+<view id="ajaxloader3">
+  <view class="outer"></view>
+  <view class="inner"></view>
+</view>
+
+<view id="ajaxbar1">
+  <view id="block1" class="barlittle"></view>
+  <view id="block2" class="barlittle"></view>
+  <view id="block3" class="barlittle"></view>
+  <view id="block4" class="barlittle"></view>
+  <view id="block5" class="barlittle"></view>
+</view>
+
+<view id="ajaxwave1">
+  <view id="pointcircle1" class="pointcircle"></view>
+  <view id="pointcircle2" class="pointcircle"></view>
+  <view id="pointcircle3" class="pointcircle"></view>
+  <view id="pointcircle4" class="pointcircle"></view>
+  <view id="pointcircle5" class="pointcircle"></view>
+</view>
+
+<view id="facebook">
+  <view class="bar"></view>
+  <view class="bar"></view>
+  <view class="bar"></view>
+</view>
+
+<view id="loadpulse">
+    <view class="segment">
+      <view id="layer1" class="ball"></view>
+      <view id="layer7" class="pulse"></view>
+    </view>
+    <view class="segment">
+      <view id="layer2" class="ball"></view>
+      <view id="layer8" class="pulse"></view>
+    </view>
+    <view class="segment">
+      <view id="layer3" class="ball"></view>
+      <view id="layer9" class="pulse"></view>
+    </view>
+    <view class="segment">
+      <view id="layer4" class="ball"></view>
+      <view id="layer10" class="pulse"></view>
+    </view>
+    <view class="segment">
+      <view id="layer5" class="ball"></view>
+      <view id="layer11" class="pulse"></view>
+    </view>
+</view>
+
+<view id="shadowloader">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</view>

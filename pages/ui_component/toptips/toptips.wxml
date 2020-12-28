@@ -1,0 +1,4 @@
+<!-- 简易的提示组件 -->
+<view class="dxui-toptips-container {{state==='success'?'dxui-toptips-success':''}} {{state==='warn'?'dxui-toptips-warn':''}}  {{state==='error'?'dxui-toptips-error':''}}">
+  {{msg}}
+</view>

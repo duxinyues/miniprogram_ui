@@ -1,0 +1,33 @@
+.yd_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 9999;
+  transition-property: background;
+  transition-duration: 5s;
+  transition-timing-function: ease;
+}
+
+.yd_close {
+  left: -100%;
+  top: -100%;
+  transition: all 5s;
+}
+
+.yd_popup_center {
+  width: 320px;
+  height: 150px;
+  background: blue;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -160px;
+  margin-top: -75px;
+  transition-property: background;
+  transition-duration: 5s;
+  transition-timing-function: ease;
+}

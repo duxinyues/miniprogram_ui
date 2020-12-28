@@ -1,0 +1,49 @@
+<!-- <nav-bar navbar-data='{{nvabarData1}}'></nav-bar> -->
+<view class="container">
+  <match-media min-width="400" max-width="600">
+    <view>当页面宽度在 300 ~ 500 px 之间时展示这里</view>
+  </match-media>
+  当前城市：{{city}}
+  <input class="address" type="text" placeholder="输入地址" bindblur="atuoGetLocation" />
+  <view bindtap="getUserLocation">定位</view>
+
+
+  <form catchsubmit="search">
+    <input name="word" class="word" placeholder="请输入关键词"></input>
+    <button type="primary" formType="submit">搜索</button>
+  </form>
+  <!-- 组件目录 -->
+  <view>
+    <navigator url="/pages/ui/ui">UI组件</navigator>
+    <button bindtap="test">自定义状态栏</button>
+    <button bindtap="yd_footer_popup">底部弹出</button>
+    <button bindtap="yd_left_popup">左侧弹出</button>
+    <button bindtap="yd_center_popup">弹窗</button>
+    <button bindtap="yd_success">成功弹窗</button>
+    <view>子组件传的值：{{value}}</view>
+  </view>
+
+
+  <!-- 引入组件 -->
+  <popup-left show="{{showleft}}"></popup-left>
+  <popup-footer show="{{showfooter}}"></popup-footer>
+  <stepper num="10" bind:realNameConfirm="realNameConfirm"></stepper>
+  <popup-center show="{{showCenter}}"></popup-center>
+  <view class="page__bd">
+    <searchbar bindselectresult="selectResult" search="{{search}}"></searchbar>
+  </view>
+
+</view>
+
+<!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}"  mode="multiSelector"  style="margin-top:100px">
+  <view class="picker">
+    当前选择：{{array[index]}}
+  </view>
+</picker> -->
+
+
+<view class="loading"></view>
+
+
+<button loading="true" type="primary">加载</button>
+<footer-bar></footer-bar>
