@@ -8,10 +8,10 @@
   <view bindtap="getUserLocation">定位</view>
 
 
-  <form catchsubmit="search">
+  <!-- <form catchsubmit="search">
     <input name="word" class="word" placeholder="请输入关键词"></input>
     <button type="primary" formType="submit">搜索</button>
-  </form>
+  </form> -->
   <!-- 组件目录 -->
   <view>
     <navigator url="/pages/ui/ui">UI组件</navigator>

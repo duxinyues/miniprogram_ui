@@ -37,7 +37,6 @@ App({
     //获取状态栏的高度
     wx.getSystemInfo({
       success: res => {
-        console.log(res)
         this.globalData.height = res.statusBarHeight
       }
     })

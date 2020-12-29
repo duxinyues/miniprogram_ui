@@ -14,7 +14,8 @@ Page({
       white: true, // 是就显示白的，不是就显示黑的。
     },
     showleft: false,
-    age: 25
+    age: 25,
+    location: {}
   },
   test: function () {
     wx.navigateTo({
@@ -118,17 +119,27 @@ Page({
     })
   },
   atuoGetLocation(e) {
-    let city = this.data.city
+    let city = this.data.city;
+    const that = this;
     qqMap.geocoder({
       address: city + e.detail.value, //用户输入的地址（注：地址中请包含城市名称，否则会影响解析效果），如：'北京市海淀区彩和坊路海淀西大街74号'
       complete: res => {
         if (res) {
           console.log(res); //经纬度对象
+          that.search(res.result.location.lat, res.result.location.lng);
+          const  latitude = res.result.location.lat;
+          const  longitude = res.result.location.lng;
+          wx.openLocation({
+            latitude,
+            longitude,
+            scale: 18
+          })
         } else {
           console.log('无法定位到该地址，请确认地址信息！');
         }
       }
     });
+
   },
 
   onShow: function () {
@@ -137,37 +148,37 @@ Page({
 
     var _this = this;
     //调用获取城市列表接口
-    qqMap.getCityList({
-      success: function(res) { //成功后的回调
-        console.log(res);
-        console.log('省份数据：', res.result[0])
-        var city = res.result[0];
-        //根据对应接口getCityList返回数据的Id获取区县数据（以北京为例）
-        qqMap.getDistrictByCityId({
-          // 传入对应省份ID获得城市数据，传入城市ID获得区县数据,依次类推
-          id: "520000", //对应接口getCityList返回数据的Id，如：北京是'110000'
-          success: function(res) { //成功后的回调
-            console.log(res);
-            console.log('对应城市ID下的区县数据(以北京为例)：', res.result[0]);
-          },
-          fail: function(error) {
-            console.error(error);
-          },
-          complete: function(res) {
-            console.log(res);
-          }
-        });
-      },
-      fail: function(error) {
-        console.error(error);
-      },
-    });
+    // qqMap.getCityList({
+    //   success: function(res) { //成功后的回调
+    //     console.log(res);
+    //     console.log('省份数据：', res.result[0])
+    //     var city = res.result[0];
+    //     //根据对应接口getCityList返回数据的Id获取区县数据（以北京为例）
+    //     qqMap.getDistrictByCityId({
+    //       // 传入对应省份ID获得城市数据，传入城市ID获得区县数据,依次类推
+    //       id: "520000", //对应接口getCityList返回数据的Id，如：北京是'110000'
+    //       success: function(res) { //成功后的回调
+    //         console.log(res);
+    //         console.log('对应城市ID下的区县数据(以北京为例)：', res.result[0]);
+    //       },
+    //       fail: function(error) {
+    //         console.error(error);
+    //       },
+    //       complete: function(res) {
+    //         console.log(res);
+    //       }
+    //     });
+    //   },
+    //   fail: function(error) {
+    //     console.error(error);
+    //   },
+    // });
   },
   getUserLocation: function () {
     let vm = this;
     wx.getSetting({
       success: (res) => {
-        console.log(JSON.stringify(res))
+        // console.log(JSON.stringify(res))
         // res.authSetting['scope.userLocation'] == undefined    表示 初始化进入该页面
         // res.authSetting['scope.userLocation'] == false    表示 非初始化进入该页面,且未授权
         // res.authSetting['scope.userLocation'] == true    表示 地理位置授权
@@ -221,7 +232,7 @@ Page({
     wx.getLocation({
       type: 'wgs84',
       success: function (res) {
-        console.log(JSON.stringify(res))
+        // console.log(JSON.stringify(res))
         var latitude = res.latitude
         var longitude = res.longitude
         var speed = res.speed
@@ -261,35 +272,50 @@ Page({
     });
   },
 
-  search(e) {
+  search(lat, lng) {
     const that = this;
-    qqMap.getSuggestion({
-      keyword: e.detail.value.word,
-      success(res) {
-        console.log(res)
-      }
-    });
+    // qqMap.getSuggestion({
+    //   keyword:"药店",
+    //   success(res) {
+    //     console.log(res)
+    //   }
+    // });
     qqMap.search({
-      keyword: e.detail.value.word,
-      success: function(res) {
+      keyword: "药店",
+      location: {
+        latitude: lat,
+        longitude: lng,
+      },
+      page_size: 20,
+      success: function (res) {
+        console.log("搜索结果", res);
         if (res.data.length === 0) {
           wx.showToast({
             title: '暂无数据请更换关键词',
             icon: '',
             duration: 0,
             mask: true,
-            success: function(res) {},
-            fail: function(res) {},
-            complete: function(res) {},
+            success: function (res) {},
+            fail: function (res) {},
+            complete: function (res) {},
           })
         } else {
-          console.log(res)
           that.setData({
             data: res.data
           })
+          qqMap.calculateDistance({
+            from: `${lat},${lng}` || '', //若起点有数据则采用起点坐标，若为空默认当前地址
+            to: `${res.data[0].location.lat},${res.data[0].location.lng}`, //终点坐标
+            success: function (res) { //成功后的回调
+              console.log(res);
+            },
+            fail: function (error) {
+              console.error(error);
+            },
+          });
         }
       },
-      fail: function(res) {
+      fail: function (res) {
         wx.showModal({
           title: '异常',
           content: res.message,
@@ -298,16 +324,16 @@ Page({
           cancelColor: '',
           confirmText: '确定',
           confirmColor: '',
-          success: function(res) {},
-          fail: function(res) {},
-          complete: function(res) {},
+          success: function (res) {},
+          fail: function (res) {},
+          complete: function (res) {},
         })
       },
     });
-    qqMap.getCityList({
-      success(res) {
-        console.log(res)
-      }
-    });
+    // qqMap.getCityList({
+    //   success(res) {
+    //     console.log(res)
+    //   }
+    // });
   },
 })

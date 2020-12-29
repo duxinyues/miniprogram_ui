@@ -245,9 +245,15 @@ const popup = (title, content) => {
     complete: (res) => {},
   })
 }
+
+const wxMap = require("./qqmap-wx-jssdk.min");
+const qqMap = new wxMap({
+  key: 'IS6BZ-PTEWW-W62RA-RQH5H-M76QQ-LDFQX' // 必填
+});
 module.exports = {
   formatTime: formatTime,
   getBiggerzIndex: getBiggerzIndex,
   dateUtil: dateUtil,
-  popup
+  popup,
+  qqMap
 }

@@ -1,0 +1,9 @@
+<form>
+      <input name="word" class="word" placeholder="请输入关键词" bindinput="search"></input>
+      <!-- <button type="primary" formType="submit">搜索</button> -->
+</form>
+
+
+<block wx:for="{{wordList}}">
+      <view>{{item.title}}</view>
+</block>
